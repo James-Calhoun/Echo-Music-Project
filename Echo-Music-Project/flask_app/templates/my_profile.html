@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/my_profile.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&family=Raleway&display=swap" rel="stylesheet">
+    <title>My Profile</title>
+</head>
+<body>
+    <div class="container">
+        <div class="nav_bar">
+            <div class="logo">
+                <img src="../static/images/echo_logo.png" alt="Echo Logo">
+            </div>
+            <div class="nav_right">
+                <div class="searchbar">
+                    <input type="text" placeholder="Search for artists, songs, etc...">
+                </div>
+                <div class="linksBar">
+                    <a href="/dashboard" class="links"> Home |</a>
+                    <a href="#" class="links"> My Friends |</a>
+                    <a href="/logout" class="links"> Logout </a>
+                </div>
+            </div>
+        </div>
+        <div class="profile_content">
+            <div class="pfp">
+                <img src="../static/images/default_pic.png" alt="default user logo" class="user_pfp">
+            </div>
+            <div class="user_details">
+                <div class="upper_content">
+                    <div class="user_name">
+                        <span>{{user.first_name}} <br>{{user.last_name}}</span>
+                    </div>
+                    <div class="edit_profile">
+                        <a href="/user/edit/profile/{{user.id}}" class="action"> Edit Profile</a>
+                    </div>
+                </div>
+                <div class="lower_content">
+                    <div class="details_left">
+                        <p>@{{user.handle}}</p>
+                    </div>
+                    <div class="bio">
+                        <p>Bio: <br> {{user.bio}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        {% for one_post in posts %}
+        <div class="feed">
+            <div class="user_info">
+                <div class="profile_pic">
+                    <img src="../static/images/default_pic.png" alt=" default user icon">
+                </div>
+                <div class="poster_info">
+                    <h2>{{user.first_name}} <br>{{user.last_name}}</h2>
+                    <p>{{one_post.created_at}}</p>
+                </div>
+            </div>
+            <div class="content">
+                {{one_post.content}}
+            </div>
+            <div class="actions">
+                <a href="/post/delete/{{one_post.id}}" class="post_edit">Delete Post</a>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</body>
+</html>

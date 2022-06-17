@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/edit_profile.css') }}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500&family=Raleway&display=swap" rel="stylesheet">
+    <title>Edit Profile</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content_block">
+            <form action="/user/update/profile" method="POST" enctype="multipart/form-data">
+                <label for="first_name">First Name:</label>
+                    <input type="text" name="first_name" value={{user.first_name}} required>
+                <label for="last_name">Last Name:</label>
+                    <input type="text" name="last_name" value = {{user.last_name}} required>
+                <label for="email" name="email">Email:</label>
+                    <input type="email" name="email" value={{user.email}} required>
+                <label for="handle" name="handle">Handle:</label>
+                    <input type="text" name="handle" value={{user.handle}} required> 
+                <label for="bio" name="bio">Bio:</label>
+                    <textarea name="bio" id="bio" cols="30" rows="10" required style="resize: none;">{{user.bio}}</textarea> <br> <br>
+                <button type="submit">Update Profile</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

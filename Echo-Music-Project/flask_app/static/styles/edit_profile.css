@@ -1,0 +1,84 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: 'Rajdhani', sans-serif;
+    background-color:black;
+    overflow: hidden;
+    background-image: url('../images/background.jpeg');
+    background-attachment: fixed;
+}
+
+.container {
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 1000px;
+    justify-content: center;
+}
+
+.content_block {
+    background-image: none;
+    width: 500px;
+    display: flex;
+    border: solid 3px black;
+    border-radius: 10px;
+    box-shadow: 1px 1px 1px 0px;
+    height:fit-content;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgb(182, 224, 255);
+    margin-top: 50px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+}
+
+form {
+    background-image: none;
+    background-color: rgb(182, 224, 255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+input {
+    background-image: none;
+    height: 40px;
+    width: 300px;
+    margin-bottom: 15px;
+    background-color: white;
+    border-radius: 5px;
+    color: black;
+    font-size: 1.5em;
+    padding: 20px;
+}
+
+textarea {
+    background-image: none;
+    padding: 5px;
+    font-size: 1.2em;
+    background-color: white;
+    border: solid 2px black;
+    width: 400px;
+    text-decoration: none;
+    outline: none;
+}
+
+label {
+    background-image: none;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+    background-color: rgb(182, 224, 255);
+}
+
+button {
+    background-image: none;
+    font-size: 1.2em;
+    color: rgb(182, 224, 255);
+    background-color: black;
+    width: 200px;
+    height: 30px;
+    border-radius: 10px;
+}
